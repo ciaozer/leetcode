@@ -20,13 +20,12 @@ public:
         ListNode* pb = headB;
         while(1)
         {
-            if(!pa && !pb)      return nullptr;
+            if( pa == pb )      return pa;
             if(!pa)             pa = headB;
+            else                pa = pa->next;
             if(!pb)             pb = headA;
-            if(pa == pb)        return pa;
-            pa = pa->next;
-            pb = pb->next;
-        }
+            else                pb = pb->next;
+        }     
     }
 };
 // @lc code=end
